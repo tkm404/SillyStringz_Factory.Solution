@@ -2,14 +2,13 @@
 Follow along below, replace with your own work as needed:
 
 # TITLE
-#### Brief Description/Overview  
+#### Dr. Sillystringz's Factory 
 
-#### By (your name here)  
+#### By Thomas McDowell
 
 ## Technologies Used:
 * C#
 * .NET 6.0
-* MSTest (if needed)
 * MySql
 
 ## Description:
