@@ -2,13 +2,46 @@
   Layout = "_Layout";
 }
 
+@using Factory.Models;
+
 <h2>Dr.Sillystringz's Factory</h2>
-<hr />
-
 <p>Home of the Silliest Strings this side of Baltimore (tm)</p>
+<hr />
+
+<h4>Meet our Enclave of Efficacious Engineers!</h4>
+@if (Model["engineers"].Length == 0)
+{
+  <p>Just kidding, there are none. Not yet, at least! We're Hiring!</p>
+  <p>@Html.ActionLink("Add some Engineers to the team!", "Create", "Engineers")</p>
+}
+else
+{
+  <ul>
+    @foreach (Engineer eng in Model["engineers"])
+    {
+      <li>@Html.ActionLink(@eng.Name, "Details", "Engineers", new { id = @eng.EngineerId })</li>
+    }
+  </ul>
+}
+
+<h4>Marvel at our Monumentous, Magnificent Machines!</h4>
+@if (Model["machines"].Length == 0)
+{
+  <p>If we HAD ANY. Hey, you! You have any unlicensed patents we could borrow for a few seconds?</p>
+  <p>@Html.ActionLink("Adding a Machine to the factory isn't a permenant forfeiture or anything...", "Create", "Machines")</p>
+}
+else
+{
+  <ul>
+    @foreach (Machine mach in Model["machines"])
+    {
+      <li>@Html.ActionLink(@mach.Designation, "Details", "Machines", new { id = @mach.MachineId })</li>
+    }
+  </ul>
+}
 
 <hr />
-<p>@Html.ActionLink("See all of our Marvelous Machines", "Index", "Machines")</p>
-<p>@Html.ActionLink("See our roster of Efficant Engineers", "Index", "Engineers")</p>
-<p>@Html.ActionLink("Add Engineers", "Create", "Engineers")</p>
-<p>@Html.ActionLink("Add Machines", "Create", "Machines")</p>
+<p>@Html.ActionLink("A list of our Marvelous Machines", "Index", "Machines")</p>
+<p>@Html.ActionLink("A roster of Effectual Engineers", "Index", "Engineers")</p>
+<p>@Html.ActionLink("Add More Engineers", "Create", "Engineers")</p>
+<p>@Html.ActionLink("Add More Machines", "Create", "Machines")</p>
