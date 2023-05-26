@@ -1,3 +1,31 @@
 @{
   Layout = "_Layout";
 }
+
+@using Factory.Models
+@model Factory.Models.Machine
+
+<h2> Machine Details:</h2>
+<hr />
+
+<h4>@Html.DisplayNameFor(model => model.Designation): @Html.DisplayFor(model => model.Designation)</h4>
+
+@if (@Model.JoinEntities.Count == 0)
+{
+  <p>There are no Engineeers licensed to handle this Machine!</p>
+  <p>@Html.ActionLink("Deign an Engineer WORTHY", "AddEngineer")</p>
+}
+else
+{
+  <h4>These Engineers are WORTHY of this Machine!</h4>
+  <p>(And by that, we mean licensed to repair it when it inevitably breaks for the zillionth time)</p>
+  @foreach (EngineerMachine engineerMachine in Model.JoinEntities)
+  {
+    <li>@engineerMachine.Name</li>
+  }
+}
+
+<hr />
+<p>@Html.ActionLink("Back to Home", "Index", "Home")</p>
+<p>@Html.ActionLink("Back to Machines", "Index")</p>
+<p>@Html.ActionLink("Back to Engineers", "Index", "Engineers")</p>
