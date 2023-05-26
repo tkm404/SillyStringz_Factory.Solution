@@ -21,7 +21,7 @@ else
   <p>(And by that, we mean licensed to repair it when it inevitably breaks for the zillionth time)</p>
   @foreach (EngineerMachine engineerMachine in Model.JoinEntities)
   {
-    <li>@engineerMachine.Name</li>
+    <li>@engineerMachine.Engineer.Name</li>
   }
 }
 

@@ -21,7 +21,7 @@ else
   <h4>Machines this Engineer can HANDLE!</h4>
   @foreach (EngineerMachine engineerMachine in Model.JoinEntities)
   {
-    <li>@engineerMachine.Designation</li>
+    <li>@engineerMachine.Machine.Designation</li>
   }
 }
 
