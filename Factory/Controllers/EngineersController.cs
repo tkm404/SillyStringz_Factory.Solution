@@ -16,7 +16,7 @@ namespace Factory.Controllers
       _db = db;
     }
 
-//READ vvvv
+//READ functions vvvv
 
     public ActionResult Index()
     {
@@ -32,9 +32,9 @@ namespace Factory.Controllers
       return View(thisEngineer);
     }
 
-//READ ^^^^
+//READ functions ^^^^
 //----------------------------------------------------------------
-// CREATE vvvv
+// CREATE functions vvvv
 
     public ActionResult Create()
     {
@@ -70,9 +70,9 @@ namespace Factory.Controllers
       return RedirectToAction("Details", new { id = engineer.EngineerId });
     }
 
-// CREATE ^^^^
+// CREATE functions ^^^^
 //----------------------------------------------------------------
-// UPDATE vvvv
+// UPDATE functions vvvv
 
     public ActionResult Edit(int id)
     {
@@ -87,5 +87,26 @@ namespace Factory.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+// UPDATE functions ^^^^
+//----------------------------------------------------------------
+// DELETE functions vvvv
+
+    public ActionResult Delete(int id)
+    {
+      Engineer thisEngineer = _db.Engineers.FirstOrDefault(engineers => engineers.EngineerId == id);
+      return View(thisEngineer)
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      Engineer thisEngineer = _db.Engineers.FirstOrDefault(engineers => engineers.EngineerId == id);
+      _db.Engineers.Remove(thisEngineer);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+// DELETE functions ^^^^
 }
 }
