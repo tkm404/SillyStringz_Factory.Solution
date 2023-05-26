@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+
+<h2>Confirm Machine Meltdown:</h2>
+
+@Html.DisplayNameFor(model => model.Designation): <span> </span> @Html.DisplayFor(model => model.Designation)
+
+@using (Html.BeginForm())
+{
+  <p>According to our shareholders, this Machine doesn't pass the Silliness Threshold (tm)</p>
+  <input type="submit" value="Couldn't Agree More. Delete!" />
+}
+
+<hr />
+<p>@Html.ActionLink("Back to Home", "Index", "Home")</p>
+<p>@Html.ActionLink("Edit this Machine", "Edit", new { id = Model.MachineId})</p>
+<p>@Html.ActionLink("Back to Machines", "Index")</p>
+<p>@Html.ActionLink("Back to Engineers", "Index", "Engineers")</p>
