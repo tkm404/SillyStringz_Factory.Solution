@@ -53,7 +53,7 @@ namespace Factory.Controllers
     {
       Engineer thisEngineer = _db.Engineers.FirstOrDefault(engineers => engineers.EngineerId == id);
       ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "Designation");
-      return View(thisEngineer)
+      return View(thisEngineer);
     }
     
     [HttpPost]
@@ -72,6 +72,20 @@ namespace Factory.Controllers
 
 // CREATE ^^^^
 //----------------------------------------------------------------
+// UPDATE vvvv
 
+    public ActionResult Edit(int id)
+    {
+      Engineer thisEngineer = _db.Engineers.FirstOrDefault(engineers => engineers.EngineerId == id);
+      return View(thisEngineer);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Engineer engineer)
+    {
+      _db.Engineers.Update(engineer);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 }
 }
