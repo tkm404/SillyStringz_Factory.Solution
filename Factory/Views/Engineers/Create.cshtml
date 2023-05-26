@@ -1,3 +1,20 @@
 @{
   Layout = "_Layout";
 }
+
+@model Factory.Models.Machine
+
+<h2>Hire an Efficant Engineer!</h2>
+
+@using (Html.BeginForm())
+{
+  <label>And this Engineer; their name is...? </label>
+  @Html.TextBoxFor(model => model.Name)
+  <br>
+  <input type="submit" value="Hire this Worker!">
+}
+
+<hr />
+<p>@Html.ActionLink("Back to Home", "Index", "Home")</p>
+<p>@Html.ActionLink("See all Engineers", "Index")</p>
+<p>@Html.ActionLink("See all Machines", "Index", "Machines")</p>
