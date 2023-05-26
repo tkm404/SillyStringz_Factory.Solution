@@ -51,4 +51,4 @@ Nothing code-breaking on last sweep.
 Git your license, yo!
 
 ## Database Structure
-![image of schema connections](.Factory/wwwroot/img/Database_Factory.png)
+![image of schema connections](./Factory/wwwroot/img/Database_Factory.png)
