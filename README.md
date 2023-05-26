@@ -1,4 +1,6 @@
 # Dr. Sillystringz's Factory
+
+![gif of webpage in action](./Factory/wwwroot/img/SillyFactory.gif)
 #### A web app for Epicodus's Week 10 Independent Code Review: Many-to-Many Relationships 
 
 #### By Thomas McDowell
