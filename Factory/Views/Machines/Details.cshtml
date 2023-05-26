@@ -12,7 +12,7 @@
 
 @if (@Model.JoinEntities.Count == 0)
 {
-  <p>There are no Engineeers licensed to handle this Machine!</p>
+  <p>There are no Engineers licensed to handle this Machine!</p>
   <p>@Html.ActionLink("Deign an Engineer WORTHY", "AddEngineer", new { id = Model.MachineId })</p>
 }
 else
