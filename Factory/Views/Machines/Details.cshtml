@@ -19,10 +19,17 @@ else
 {
   <h4>These Engineers are WORTHY of this Machine!</h4>
   <p>(And by that, we mean licensed to repair it when it inevitably breaks for the zillionth time)</p>
+  <ul> 
   @foreach (EngineerMachine engineerMachine in Model.JoinEntities)
   {
     <li>@engineerMachine.Engineer.Name</li>
+    @using (Html.BeginForm("DeleteJoin", "Machines"))
+    {
+      @Html.Hidden("joinId", @engineerMachine.EngineerMachineId)
+      <input type="submit" value="Delete">
   }
+  }
+  </ul>
 }
 
 <hr />
