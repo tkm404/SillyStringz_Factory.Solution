@@ -6,12 +6,12 @@
 <h2>Add an Engineer to HANDLE this Machine</h2>
 
 <p>The chosen Engineer shall be deigned WORTHY to HANDLE the AWESOME POWER of the...</p>
-<h4>@Html.DisplayFor(model => model.Designation)</h4>
+<h4>@Html.DisplayFor(model => model.Name)</h4>
 <p>(...or at least unplug it and plug it back in when it stops working...)</p>
 
 @using (Html.BeginForm())
 {
-  @Html.HiddenFor(model => model.MachineId)
+  @Html.HiddenFor(model => model.EngineerId)
 
   @Html.Label("Select Engineer")
   <br>

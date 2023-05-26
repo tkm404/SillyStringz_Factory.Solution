@@ -118,9 +118,9 @@ namespace Factory.Controllers
     public ActionResult DeleteJoin(int joinId)
     {
       EngineerMachine joinEntry = _db.EngineerMachines.FirstOrDefault(entry => entry.EngineerMachineId == joinId);
-      _db.EngineerMachines.Remove(JoinEntry);
+      _db.EngineerMachines.Remove(joinEntry);
       _db.SaveChanges();
-      return RedirectToAction("Index")
+      return RedirectToAction("Index");
     }
 
 // DELETE functions ^^^^
