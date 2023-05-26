@@ -1,3 +1,25 @@
 @{
   Layout = "_Layout";
 }
+
+<h2>Marvelous Machines!</h2>
+<hr />
+
+@using Factory.Models
+
+@if (Model.Count == 0)
+{
+  <p>No Machines to Marvel</p>
+}
+<ul>
+  @foreach (Machine machine in Model)
+  {
+    <li>@Html.ActionLink($"{machine.Designation}", "Details", new { id = machine.MachineId})</li>
+  }
+</ul>
+
+<hr />
+<p>@Html.ActionLink("Back to Home", "Index", "Home")</p>
+<p>@Html.ActionLink("Add another Machine", "Create")</p>
+<p>@Html.ActionLink("See all Engineers", "Index", "Engineers")</p>
+<p>@Html.ActionLink("Add an Engineer", "Create", "Engineers")</p>
