@@ -22,12 +22,18 @@ else
   @foreach (EngineerMachine engineerMachine in Model.JoinEntities)
   {
     <li>@engineerMachine.Machine.Designation</li>
+    @using (Html.BeginForm("DeleteJoin", "Engineers"))
+    {
+      @Html.Hidden("joinId", @engineerMachine.EngineerMachineId)
+      <input type="submit" value="Delete">
+    }
   }
 }
 
 <hr />
 <p>@Html.ActionLink("Back to Home", "Index", "Home")</p>
 <p>@Html.ActionLink("Edit this Engineer", "Edit", new { id = Model.EngineerId})</p>
+<p>@Html.ActionLink("Delete this Engineer", "Delete", new { id = Model.EngineerId })</p>
 <p>@Html.ActionLink("Add MORE Machine Licenses", "AddMachine", new { id = Model.EngineerId })</p>
 <p>@Html.ActionLink("Back to Engineers", "Index")</p>
 <p>@Html.ActionLink("Back to Machines", "Index", "Machines")</p>
