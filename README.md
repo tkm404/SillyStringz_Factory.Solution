@@ -7,6 +7,12 @@
 * C#
 * .NET 6.0
 * MySql
+* ASP.NET Core
+* MVC
+* Entity Framework Core
+* Pomelo Entity Framework Core
+* EF Core Migrations
+* HTML Helpers
 
 ## Description:
 This is a web app based on a prompt provided by Epicodus to demonstrate an understanding of Many-to-Many relationships in databases. A user should land on a splash page which prompts them to enter Engineers and Machines. As a user fills up the database, more Engineers and Machines will be added to the splash page list. A user can View Details, Edit, and Delete Engineers and Machines, and can Associate any given Machine with any Engineer and vice versa. These Associations can be deleted without deleting an entire Engineer or Machine. A user is unable to enter an Engineer or Machine without a name, and any given Engineer or Machine can't have more than one of the same kind of opposite associated with them (I.E. an Engineer can't be assigned the same Machine over and over and generate more associations). Similarly, no Engineer or Machine can be assigned a "blank" Machine or Engineer if their counterpart doesn't exist. 
@@ -42,5 +48,5 @@ Nothing code-breaking on last sweep.
 ## License:
 Git your license, yo!
 
-## One More Thing:
-Don't forget to get a picture of your database relations layout with [SQL Designer](https://ondras.zarovi.cz/sql/demo/). Review as needed with [this epicodus lesson](https://www.learnhowtoprogram.com/c-and-net/database-basics/using-sql-designer)
+## Database Structure
+![image of schema connections](.Factory/wwwroot/img/Database_Factory.png)
