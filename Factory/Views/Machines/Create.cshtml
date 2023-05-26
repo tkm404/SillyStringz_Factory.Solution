@@ -6,6 +6,8 @@
 
 <h2>Install a Marvelous Machine!</h2>
 
+<p>@Html.ValidationMessageFor(model => model.Designation, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
 @using (Html.BeginForm())
 {
   <label>You're telling me this machine is called the... </label>
