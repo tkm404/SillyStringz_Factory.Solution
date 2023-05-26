@@ -14,7 +14,7 @@
 {
   <p>This Engineer isn't licensed on any of our machines!</p>
   <p>(I, too, like to live dangerously)</p>
-  <p>@Html.ActionLink("But OSHA is no joke. Get this fool licensed!", "AddMachine")</p>
+  <p>@Html.ActionLink("But OSHA is no joke. Get this fool licensed!", "AddMachine", new { id = Model.EngineerId })</p>
 }
 else
 {
