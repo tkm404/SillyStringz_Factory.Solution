@@ -1,8 +1,5 @@
-# IMPORTANT TEMPLATE USAGE STUFF IN THE README
-Follow along below, replace with your own work as needed:
-
-# TITLE
-#### Dr. Sillystringz's Factory 
+# Dr. Sillystringz's Factory
+#### A web app for Epicodus's Week 10 Independent Code Review: Many-to-Many Relationships 
 
 #### By Thomas McDowell
 
