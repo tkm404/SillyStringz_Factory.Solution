@@ -1,4 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Factory.Models;
+using System.Collections.Generic;
+using System.Linq;
+using System;
 
 namespace Factory.Controllers
 {
@@ -17,13 +23,13 @@ namespace Factory.Controllers
         return View();
     }
 
-    public ActionResult Details(int id)
-    {
-      Engineer thisEngineer = _db.Engineers
-                                  .Include()...
+    // public ActionResult Details(int id)
+    // {
+    //   Engineer thisEngineer = _db.Engineers
+    //                               .Include()...
 
-      return View(thisEngineer);
-    }
+    //   return View(thisEngineer);
+    // }
 
 //READ ^^^^
 //----------------------------------------------------------------
@@ -39,6 +45,7 @@ namespace Factory.Controllers
     {
       _db.Engineers.Add(engineer);
       _db.SaveChanges();
+      return RedirectToAction("Index");
     }
 
 // CREATE ^^^^

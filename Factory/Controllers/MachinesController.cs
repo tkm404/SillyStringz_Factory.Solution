@@ -1,11 +1,17 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Factory.Models;
+using System.Collections.Generic;
+using System.Linq;
+using System;
 
 namespace Factory.Controllers
 {
     public class MachinesController : Controller
 {
     private readonly FactoryContext _db;
-    public EngineersController(FactoryContext db)
+    public MachinesController(FactoryContext db)
     {
       _db = db;
     }
@@ -17,13 +23,13 @@ namespace Factory.Controllers
         return View();
     }
 
-    public ActionResult Details(int id)
-    {
-      Machine thisMachine = _db.Machines
-                                  .Include()...
+    // public ActionResult Details(int id)
+    // {
+    //   Machine thisMachine = _db.Machines
+    //                               .Include()...
 
-      return View(thisMachine);
-    }
+    //   return View(thisMachine);
+    // }
 
 //READ ^^^^
 //----------------------------------------------------------------
@@ -39,6 +45,7 @@ namespace Factory.Controllers
     {
       _db.Machines.Add(machine);
       _db.SaveChanges();
+      return RedirectToAction("Index");
     }
 
 // CREATE ^^^^
