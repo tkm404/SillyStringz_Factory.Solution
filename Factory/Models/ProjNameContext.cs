@@ -1,13 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace [ProjectNameWithoutBracks].Models
+namespace Factory.Models
 {
-  public class [ProjectNameWithoutBracks]Context : DbContext
+  public class FactoryContext : DbContext
   {
     public DbSet<PrimaryModel> PrimaryModel { get; set; }
     public DbSet<SecondaryModel> SecondaryModel { get; set; }
 
-    public [ProjectNameWithoutBracks]Context(DbContextOptions options) : base(options) { }
+    public FactoryContext(DbContextOptions options) : base(options) { }
   }
 }
 

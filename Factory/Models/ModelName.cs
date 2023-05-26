@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace [ProjectNameWithoutBracks].Models
+namespace Factory.Models
 {
   public class ModelName
   {
