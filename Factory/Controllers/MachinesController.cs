@@ -93,7 +93,7 @@ namespace Factory.Controllers
     public ActionResult Delete(int id)
     {
       Machine thisMachine = _db.Machines.FirstOrDefault(machines => machines.MachineId == id);
-      return View(thisMachine)
+      return View(thisMachine);
     }
 
     [HttpPost, ActionName("Delete")]

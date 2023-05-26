@@ -95,7 +95,7 @@ namespace Factory.Controllers
     public ActionResult Delete(int id)
     {
       Engineer thisEngineer = _db.Engineers.FirstOrDefault(engineers => engineers.EngineerId == id);
-      return View(thisEngineer)
+      return View(thisEngineer);
     }
 
     [HttpPost, ActionName("Delete")]
@@ -105,6 +105,15 @@ namespace Factory.Controllers
       _db.Engineers.Remove(thisEngineer);
       _db.SaveChanges();
       return RedirectToAction("Index");
+    }
+
+    [HttpPost]
+    public ActionResult DeleteJoin(int joinId)
+    {
+      EngineerMachine joinEntry = _db.EngineerMachines.FirstOrDefault(entry => entry.EngineerMachineId == joinId);
+      _db.EngineerMachines.Remove(JoinEntry);
+      _db.SaveChanges();
+      return RedirectToAction("Index")
     }
 
 // DELETE functions ^^^^
