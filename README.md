@@ -48,7 +48,7 @@ Use the navigation links to move from page to page on the web app. Use text inpu
 Nothing code-breaking on last sweep.
 
 ## License:
-Git your license, yo!
+MIT (C) 2023 Thomas McDowell
 
 ## Database Structure
 ![image of schema connections](./Factory/wwwroot/img/Database_Factory.png)
